@@ -1,24 +1,18 @@
-# README
+# [iS] Test - Tácio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Main Dependencies
+* Ruby 2.3.1
+* Rails 5.0.0.1
 
-Things you may want to cover:
+## Project Relevant Dependencies
+* Testing
+  * Rspec
+  * Capybara
+  * Database Cleaner
+  * Factory Girl
+* Slim
+* Bootstrap
+* Enumerate_it
+* Responders
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Clone the repository, then Bundle it and run `bundle exec rails server`
