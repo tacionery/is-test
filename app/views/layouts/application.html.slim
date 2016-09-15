@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title IsTest
+    == csrf_meta_tags
+
+    == stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    == javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      .container
+        .navbar-header
+          button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          == link_to "[iS] Test", root_path, class: 'navbar-brand'
+        #navbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              == link_to "Students", students_path
+            li
+              == link_to "Courses", courses_path
+            li
+              == link_to "Classrooms", classrooms_path
+        /! /.nav-collapse
+
+    == yield

@@ -15,6 +15,8 @@ gem 'slim-rails'
 gem 'enumerate_it'
 gem 'responders'
 gem 'rails-controller-testing'
+gem 'bootstrap-sass', '~> 3.3.6'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri

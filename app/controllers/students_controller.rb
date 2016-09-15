@@ -11,11 +11,12 @@ class StudentsController < ApplicationController
   end
 
   def new
+    @student = Student.new
   end
 
   def create
     @student = Student.create students_create_params
-    respond_with @student, location: -> { student_path(@student) }
+    respond_with @student, location: -> { students_path }
   end
 
   def edit
@@ -23,7 +24,7 @@ class StudentsController < ApplicationController
 
   def update
     @student.update_attributes students_update_params
-    respond_with @student, location: -> { student_path(@student) }
+    respond_with @student, location: -> { students_path }
   end
 
   def destroy

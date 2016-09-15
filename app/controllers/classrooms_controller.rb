@@ -15,7 +15,7 @@ class ClassroomsController < ApplicationController
 
   def create
     @classroom = Classroom.create classroom_params
-    respond_with @classroom, location: -> { classroom_path(@classroom) }
+    respond_with @classroom, location: -> { classrooms_path }
   end
 
   def destroy

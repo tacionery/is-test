@@ -1,0 +1,19 @@
+
+.container
+  h1 Classrooms List
+
+  .row
+    == link_to "New Classroom", new_classroom_path, class: 'btn btn-primary'
+
+  table.table.table-hover
+    thead
+      tr
+        td Student
+        td Course
+        td Entry At
+
+    - @classrooms.each do |classroom|
+        tr
+          td = classroom.student.name
+          td = classroom.course.name
+          td = classroom.entry_at.strftime("%d/%m/%Y %H:%m")

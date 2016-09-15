@@ -1,0 +1,19 @@
+
+.container
+  h1 Students List
+
+  .row
+    == link_to "New Student", new_student_path, class: 'btn btn-primary'
+
+  table.table.table-hover
+    thead
+      tr
+        td Name
+        td Register
+        td Status
+
+    - @students.each do |student|
+        tr
+          td == link_to student.name, student_path(student)
+          td = student.register_number
+          td = student.status_humanize

@@ -4,7 +4,7 @@ class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def index
-    @course = Course.all
+    @courses = Course.all
   end
 
   def show
@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
 
   def create
     @course = Course.create course_params
-    respond_with @course, location: -> { course_path(@course) }
+    respond_with @course, location: -> { courses_path }
   end
 
   def edit
@@ -24,7 +24,7 @@ class CoursesController < ApplicationController
 
   def update
     @course.update_attributes course_params
-    respond_with @course, location: -> { course_path(@course) }
+    respond_with @course, location: -> { courses_path }
   end
 
   def destroy

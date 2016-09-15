@@ -1,0 +1,26 @@
+.container
+  h1 New Classroom
+
+  - if @classroom.errors.any?
+    .alert.alert-danger
+      - @classroom.errors.full_messages.each do |message|
+        | *
+        = message
+        br
+
+  == form_for @classroom do |f|
+      .form-group
+        = f.label :student, class: 'col-sm-2 control-label'
+
+        .col-sm-10
+          = f.collection_select :students_id, Student.all, :id, :name, {}, {class: 'form-control'}
+
+      .form-group
+        = f.label :course, class: 'col-sm-2 control-label'
+
+        .col-sm-10
+          = f.collection_select :courses_id, Course.all, :id, :name, {}, {class: 'form-control'}
+
+      .form-group
+        .col.sm-offset-2.col-sm-10
+          = f.submit 'Create Course', :class => 'btn btn-primary'

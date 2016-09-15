@@ -1,0 +1,19 @@
+
+.container
+  h1 Courses List
+
+  .row
+    == link_to "New Course", new_course_path, class: 'btn btn-primary'
+
+  table.table.table-hover
+    thead
+      tr
+        td Name
+        td Description
+        td Status
+
+    - @courses.each do |course|
+        tr
+          td == link_to course.name, course_path(course)
+          td = course.description.truncate(25)
+          td = course.status_humanize
