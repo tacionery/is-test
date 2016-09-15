@@ -3,7 +3,7 @@ require 'rails_helper'
 describe ClassroomsController do
   describe "POST #create" do
     before(:all) do
-      @student = create(:active_student)
+      @student = create(:active_student, register_number: 'CCC123')
       @course = create(:active_course)
     end
 

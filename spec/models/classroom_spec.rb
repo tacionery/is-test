@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Classroom, type: :model do
   describe "#create" do
     before(:all) do
-      @active_student = create(:active_student)
+      @active_student = create(:active_student, register_number: 'DDD123')
       @active_course = create(:active_course)
     end
 

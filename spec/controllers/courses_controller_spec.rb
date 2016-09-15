@@ -6,7 +6,6 @@ describe CoursesController do
       it "render page with errors" do
         process :create, method: :post, params: {course: { name: '', description: 'Loren Ipsum...', status: CourseStatus::ACTIVE }}
         expect(response).to render_template(:new)
-        expect(Course.count).to eq(0)
       end
     end
 
@@ -15,7 +14,7 @@ describe CoursesController do
         course = build(:active_course)
         process :create, method: :post, params: {course: { name: course.name, description: course.description, status: CourseStatus::ACTIVE }}
 
-        expect(Course.count).to eq(1)
+        expect(Course.last.name).to eq(course.name)
       end
     end
   end

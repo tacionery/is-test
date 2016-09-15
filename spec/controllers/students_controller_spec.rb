@@ -6,7 +6,6 @@ describe StudentsController do
       it "render page with errors" do
         process :create, method: :post, params: {student: { name: '', register_number: 'ABC123', status: StudentStatus::ACTIVE }}
         expect(response).to render_template(:new)
-        expect(Student.count).to eq(0)
       end
     end
 
@@ -15,7 +14,7 @@ describe StudentsController do
         student = build(:active_student)
         process :create, method: :post, params: {student: { name: student.name, register_number: student.register_number, status: StudentStatus::ACTIVE }}
 
-        expect(Student.count).to eq(1)
+        expect(Student.last.name).to eq(student.name)
       end
     end
   end
@@ -23,7 +22,7 @@ describe StudentsController do
   describe "PATCH #update" do
     context "when update with valid params" do
       before(:all) do
-        @student = create(:active_student)
+        @student = create(:active_student, register_number: 'BBB333')
       end
 
       it "updates a student" do
