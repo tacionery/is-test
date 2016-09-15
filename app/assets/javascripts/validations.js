@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     $('.required').each(function (i, v) {
       if ($(v).val() == '') {
-        let label = $("label[for='"+$(v).attr('id')+"']");
+        var label = $("label[for='"+$(v).attr('id')+"']");
         label.css({color: 'red'});
         error = true;
       }
