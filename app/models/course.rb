@@ -4,7 +4,7 @@ class Course < ApplicationRecord
   has_enumeration_for :status, with: CourseStatus
 
   # relations
-  belongs_to :classroom, foreign_key: 'classrooms_id'
+  has_many :classrooms
 
   # validations
   validates_presence_of :name

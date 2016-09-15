@@ -4,7 +4,7 @@ class Student < ApplicationRecord
   has_enumeration_for :status, with: StudentStatus
 
   # relations
-  belongs_to :classroom, foreign_key: 'students_id'
+  has_many :classrooms
 
   # validations
   validates_uniqueness_of :register_number

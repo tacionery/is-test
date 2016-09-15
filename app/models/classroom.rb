@@ -1,14 +1,14 @@
 class Classroom < ApplicationRecord
 
   # hooks
-  before_create :set_entry_date
+  before_create :set_entry_at
 
   # relations
-  has_many :students, foreign_key: 'students_id'
-  has_many :courses, foreign_key: 'courses_id'
+  belongs_to :student, foreign_key: 'students_id'
+  belongs_to :course, foreign_key: 'courses_id'
 
-  def set_entry_date
-    self.entry_date = DateTime.now.in_time_zone
+  def set_entry_at
+    self.entry_at = DateTime.now.in_time_zone
   end
 
 end
