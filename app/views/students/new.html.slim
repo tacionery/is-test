@@ -4,7 +4,7 @@
   - if @student.errors.any?
     .alert.alert-danger
       - @student.errors.full_messages.each do |message|
-        | * 
+        | *
         = message
         br
 
@@ -13,13 +13,13 @@
         = f.label :name, class: 'col-sm-2 control-label'
 
         .col-sm-10
-          = f.text_field :name, class: 'form-control'
+          = f.text_field :name, class: 'form-control required'
 
       .form-group
         = f.label :register_number, class: 'col-sm-2 control-label'
 
         .col-sm-10
-          = f.text_field :register_number, class: 'form-control'
+          = f.text_field :register_number, class: 'form-control required'
 
       .form-group
         .col-sm-10
@@ -28,4 +28,4 @@
 
       .form-group
         .col.sm-offset-2.col-sm-10
-          = f.submit 'Create Student', :class => 'btn btn-primary'
+          = f.submit 'Create Student', :class => 'btn btn-primary save'

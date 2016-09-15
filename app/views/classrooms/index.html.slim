@@ -11,9 +11,11 @@
         td Student
         td Course
         td Entry At
+        td Actions
 
     - @classrooms.each do |classroom|
         tr
           td = classroom.student.name
           td = classroom.course.name
           td = classroom.entry_at.strftime("%d/%m/%Y %H:%m")
+          td == link_to "Delete", classroom_path(classroom), method: :delete

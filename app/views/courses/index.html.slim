@@ -14,6 +14,6 @@
 
     - @courses.each do |course|
         tr
-          td == link_to course.name, course_path(course)
+          td == link_to course.name, edit_course_path(course)
           td = course.description.truncate(25)
           td = course.status_humanize

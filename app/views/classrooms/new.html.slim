@@ -13,13 +13,13 @@
         = f.label :student, class: 'col-sm-2 control-label'
 
         .col-sm-10
-          = f.collection_select :students_id, Student.all, :id, :name, {}, {class: 'form-control'}
+          = f.collection_select :students_id, Student.all, :id, :name, {}, {class: 'form-control required'}
 
       .form-group
         = f.label :course, class: 'col-sm-2 control-label'
 
         .col-sm-10
-          = f.collection_select :courses_id, Course.all, :id, :name, {}, {class: 'form-control'}
+          = f.collection_select :courses_id, Course.all, :id, :name, {}, {class: 'form-control required'}
 
       .form-group
         .col.sm-offset-2.col-sm-10

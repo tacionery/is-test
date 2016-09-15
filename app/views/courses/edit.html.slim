@@ -8,12 +8,12 @@
         = message
         br
 
-  == form_for @course do |f|
+  == form_for @course, url: {controller: :courses, action: :update} do |f|
       .form-group
         = f.label :name, class: 'col-sm-2 control-label'
 
         .col-sm-10
-          = f.text_field :name, class: 'form-control'
+          = f.text_field :name, class: 'form-control required'
 
       .form-group
         = f.label :description, class: 'col-sm-2 control-label'
